@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.restartinto" path="/org/gnome/shell/extensions/restartinto/">
+    
+    <key name="boot-id" type="s">
+      <default>'0000'</default>
+      <summary>Windows Boot Entry ID</summary>
+      <description>The EFI boot entry ID for Windows (4 hex digits)</description>
+    </key>
+    
+    <key name="button-text" type="s">
+      <default>'Restart to Windows'</default>
+      <summary>Button Text</summary>
+      <description>Text displayed on the restart to Windows button</description>
+    </key>
+    
+    <key name="debug-mode" type="b">
+      <default>false</default>
+      <summary>Debug Mode</summary>
+      <description>Enable debug logging to system journal</description>
+    </key>
+    
+  </schema>
+</schemalist>
