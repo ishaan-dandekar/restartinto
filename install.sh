@@ -149,3 +149,4 @@ echo "• Disable: gnome-extensions disable $EXTENSION_UUID"
 
 echo
 echo -e "${GREEN}🚀 Ready! Just restart GNOME Shell and enable the extension!${NC}"
+echo -e "${RED}It is adviced to Disable Windows Fastboot${NC}"
