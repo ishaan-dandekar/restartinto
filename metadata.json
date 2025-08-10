@@ -1,0 +1,18 @@
+{
+  "uuid": "restartinto@ishaan-dandekar.github.io",
+  "name": "Restart Into...",
+  "description": "Adds a 'Restart to Windows' button to the restart dialog for easy dual-boot switching",
+  "shell-version": [
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46"
+  ],
+  "version": 1,
+  "url": "https://github.com/ishaan-dandekar",
+  "settings-schema": "org.gnome.shell.extensions.restartinto",
+  "gettext-domain": "restartinto"
+}
