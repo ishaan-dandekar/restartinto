@@ -118,7 +118,7 @@ The 4-digit number (e.g., `0000`) is your boot ID.
 ## Troubleshooting
 
 
-### Something breaking after Booting back into Ubuntu:
+### Some Devices not detected after booting back into Ubuntu
 - Sometimes, Windows Fastboot might cause problems with this, it is adviced to turn it off.
 - Problems like wifi card not detected temporarily after booting ubuntu again were detected during testing.
 
