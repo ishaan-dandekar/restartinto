@@ -23,9 +23,6 @@ A simple GNOME Shell extension that adds a "Restart to Windows" button to the re
 - **efibootmgr** package installed
 - **Passwordless sudo** for restart commands (configured by installer)
 
-## Common Issues:
-- Sometimes, Windows Fastboot might cause problems with this, it is adviced to turn it off. Problems like wifi card not detected temporarily after booting ubuntu again were detected during testing.
-
 ## Installation
 
 ### Automatic Installation (Recommended)
@@ -119,6 +116,11 @@ The 4-digit number (e.g., `0000`) is your boot ID.
 3. **System restarts directly into Windows** 🎉
 
 ## Troubleshooting
+
+
+### Something breaking after Booting back into Ubuntu:
+- Sometimes, Windows Fastboot might cause problems with this, it is adviced to turn it off.
+- Problems like wifi card not detected temporarily after booting ubuntu again were detected during testing.
 
 ### Extension not appearing
 - Restart GNOME Shell: `Alt+F2` → type `r` → Enter
