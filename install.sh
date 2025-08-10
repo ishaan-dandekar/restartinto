@@ -37,7 +37,7 @@ echo "${CURRENT_USER} ALL=(root) NOPASSWD: /usr/bin/efibootmgr -n *, /usr/sbin/r
 echo -e "${GREEN}✓ Sudoers configuration created${NC}"
 
 echo
-echo -e "${YELLOW}Step 2: Finding Windows Boot Manager entry${NC}"
+echo -e "${YELLOW}Step 2: Finding Other OS Boot Manager entry${NC}"
 
 # Check if efibootmgr is available
 if ! command -v efibootmgr &> /dev/null; then
@@ -53,8 +53,8 @@ echo "Current EFI boot entries:"
 sudo efibootmgr | grep -E "Boot[0-9]+"
 
 echo
-echo -e "${YELLOW}Please find your Windows Boot Manager entry ID from the list above.${NC}"
-echo "It's usually labeled as 'Windows Boot Manager' and has an ID like Boot0000, Boot0001, etc."
+echo -e "${YELLOW}Please find your Other OS Boot Manager entry ID from the list above.${NC}"
+echo "For Windows, it's usually labeled as 'Windows Boot Manager' and has an ID like Boot0000, Boot0001, etc."
 echo -n "Enter the boot ID (numbers only, e.g., 0000): "
 read BOOT_ID
 
@@ -110,67 +110,42 @@ gsettings --schemadir "$EXTENSION_DIR/schemas/" set org.gnome.shell.extensions.r
 echo -e "${GREEN}✓ Extension files copied to $EXTENSION_DIR${NC}"
 
 echo
-echo -e "${YELLOW}Step 4: Finalizing installation${NC}"
+echo -e "${YELLOW}Step 4: Installing extension${NC}"
 
-# Check if we're on X11 or Wayland
-if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-    echo "Detected X11 session. Attempting to restart GNOME Shell..."
-    
-    # Try to restart GNOME Shell on X11
-    if command -v busctl &> /dev/null; then
-        busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart("Restarting…")' &> /dev/null
-        sleep 3
-    fi
-    
-    # Try alternative method
-    if command -v gdbus &> /dev/null; then
-        gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Meta.restart("Restarting…")' &> /dev/null
-        sleep 3
-    fi
-    
-    # Enable the extension after restart attempt
-    gnome-extensions enable "$EXTENSION_UUID" &> /dev/null
-    
-    if gnome-extensions list --enabled | grep -q "$EXTENSION_UUID"; then
-        echo -e "${GREEN}✓ Extension enabled successfully${NC}"
-    else
-        echo -e "${YELLOW}⚠ Extension installed but not enabled yet${NC}"
-        echo -e "${YELLOW}Please restart GNOME Shell manually: Alt+F2 → type 'r' → Enter${NC}"
-    fi
-    
-else
-    echo "Detected Wayland session. Extension installed successfully."
-    echo -e "${YELLOW}⚠ Please log out and log back in to enable the extension.${NC}"
-fi
+# Just install the extension, don't try to enable automatically
+echo -e "${GREEN}✓ Extension files copied to $EXTENSION_DIR${NC}"
 
 echo
 echo -e "${GREEN}=== Installation Complete! ===${NC}"
 echo
-echo -e "${BLUE}Extension Status:${NC}"
-if gnome-extensions list --enabled | grep -q "$EXTENSION_UUID"; then
-    echo -e "${GREEN}✓ Extension is enabled and ready to use${NC}"
-    echo
-    echo -e "${BLUE}Usage:${NC}"
-    echo "1. Press Alt+F4 or go to Activities > Power Off/Log Out > Restart"
-    echo "2. You should now see a 'Restart to Windows' button in the restart dialog"
-    echo "3. Click it to restart directly into Windows"
+echo -e "${BLUE}⚠️  IMPORTANT: Extension requires GNOME Shell restart to activate${NC}"
+echo
+
+# Provide session-specific instructions
+if [ "$XDG_SESSION_TYPE" = "x11" ]; then
+    echo -e "${YELLOW}For X11 session - Choose one:${NC}"
+    echo "  1. Press Alt+F2, type 'r', press Enter (Quick restart)"
+    echo "  2. Log out and log back in (Guaranteed to work)"
 else
-    echo -e "${YELLOW}⚠ Extension needs GNOME Shell restart to activate${NC}"
-    echo
-    echo -e "${BLUE}To activate:${NC}"
-    if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-        echo "• Press Alt+F2, type 'r', and press Enter"
-        echo "• Or log out and log back in"
-    else
-        echo "• Log out and log back in (required for Wayland)"
-    fi
-    echo
-    echo -e "${BLUE}After restart:${NC}"
-    echo "1. Press Alt+F4 or go to Activities > Power Off/Log Out > Restart"
-    echo "2. You should now see a 'Restart to Windows' button in the restart dialog"
-    echo "3. Click it to restart directly into Windows"
+    echo -e "${YELLOW}For Wayland session:${NC}"
+    echo "  • Log out and log back in (Required - no quick restart available)"
 fi
 
 echo
-echo -e "${YELLOW}To configure:${NC} Run gnome-extensions prefs $EXTENSION_UUID"
-echo -e "${YELLOW}To uninstall:${NC} Run gnome-extensions disable $EXTENSION_UUID"
+echo -e "${BLUE}After restarting GNOME Shell:${NC}"
+echo "1. Enable the extension:"
+echo "   gnome-extensions enable $EXTENSION_UUID"
+echo
+echo "2. Test it works:"
+echo "   • Press Alt+F4 or go to Activities > Power Off/Log Out > Restart" 
+echo "   • Look for 'Restart to Windows' button in the restart dialog"
+echo "   • Click it to restart directly into Windows"
+
+echo
+echo -e "${YELLOW}Useful commands:${NC}"
+echo "• Check status: gnome-extensions list | grep restartinto"
+echo "• Configure: gnome-extensions prefs $EXTENSION_UUID"  
+echo "• Disable: gnome-extensions disable $EXTENSION_UUID"
+
+echo
+echo -e "${GREEN}🚀 Ready! Just restart GNOME Shell and enable the extension!${NC}"
