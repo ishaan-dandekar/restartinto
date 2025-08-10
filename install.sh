@@ -137,7 +137,7 @@ echo "1. Enable the extension:"
 echo "   gnome-extensions enable $EXTENSION_UUID"
 echo
 echo "2. Test it works:"
-echo "   • Press Alt+F4 or go to Activities > Power Off/Log Out > Restart" 
+echo "   • Power Off/Log Out > Restart" 
 echo "   • Look for 'Restart to Windows' button in the restart dialog"
 echo "   • Click it to restart directly into Windows"
 
