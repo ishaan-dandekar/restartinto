@@ -5,7 +5,7 @@ A simple GNOME Shell extension that adds a "Restart to Windows" button to the re
 ![Version](https://img.shields.io/badge/version-1.0-green)
 ![License](https://img.shields.io/badge/license-GPL--3.0-blue)
 
-![Working](https://i.ibb.co/7tjh0WLJ/demo.png)
+![Working](demo.png)
 ## Features
 
 - 🚀 **One-click restart to Windows** - No more BIOS/GRUB menu navigation
