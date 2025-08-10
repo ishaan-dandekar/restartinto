@@ -131,12 +131,12 @@ function buildPrefsWidget() {
     });
     
     const detectionLabel = new Gtk.Label({
-        label: 'Click to scan for Windows boot entries:',
+        label: 'Click to scan for all available boot entries:',
         halign: Gtk.Align.START,
     });
     
     const scanButton = new Gtk.Button({
-        label: 'Scan Boot Entries',
+        label: 'Scan All Boot Entries',
     });
     
     const resultLabel = new Gtk.Label({
@@ -155,17 +155,17 @@ function buildPrefsWidget() {
                 
                 lines.forEach(line => {
                     const match = line.match(/Boot([0-9A-Fa-f]{4})\*?\s+(.+)/);
-                    if (match && (match[2].toLowerCase().includes('windows') || 
-                               match[2].toLowerCase().includes('microsoft') ||
-                               match[2].toLowerCase().includes('boot manager'))) {
-                        bootEntries.push(`${match[1]}: ${match[2]}`);
+                    if (match) {
+                        const bootId = match[1];
+                        const bootName = match[2];
+                        bootEntries.push(`${bootId}: ${bootName}`);
                     }
                 });
                 
                 if (bootEntries.length > 0) {
-                    resultLabel.set_text('Found Windows entries:\n' + bootEntries.join('\n'));
+                    resultLabel.set_text('Found boot entries:\n' + bootEntries.join('\n'));
                 } else {
-                    resultLabel.set_text('No Windows boot entries found');
+                    resultLabel.set_text('No boot entries found');
                 }
             } else {
                 resultLabel.set_text('Error: Could not run efibootmgr');
