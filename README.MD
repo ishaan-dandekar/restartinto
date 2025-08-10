@@ -1,6 +1,7 @@
 # Restart Into Windows - GNOME Shell Extension
 
 A simple GNOME Shell extension that adds a "Restart to Windows" button to the restart dialog, making dual-boot switching effortless.
+
 ![Extension Demo](https://img.shields.io/badge/GNOME-Shell-blue?logo=gnome&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.0-green)
 ![License](https://img.shields.io/badge/license-GPL--3.0-blue)
