@@ -12,7 +12,7 @@
     "46"
   ],
   "version": 1,
-  "url": "https://github.com/ishaan-dandekar",
+  "url": "https://github.com/ishaan-dandekar/restartinto",
   "settings-schema": "org.gnome.shell.extensions.restartinto",
   "gettext-domain": "restartinto"
 }
