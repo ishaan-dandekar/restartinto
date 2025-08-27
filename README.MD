@@ -1,6 +1,6 @@
-# Restart Into Windows - GNOME Shell Extension
+# Restart Into... - GNOME Shell Extension
 
-A simple GNOME Shell extension that adds a "Restart to Windows" button to the restart dialog, making dual-boot switching effortless.
+A simple GNOME Shell extension that adds a "Restart to" button to the restart dialog, making dual-boot switching effortless.
 
 ![Extension Demo](https://img.shields.io/badge/GNOME-Shell-blue?logo=gnome&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.0-green)
@@ -9,7 +9,7 @@ A simple GNOME Shell extension that adds a "Restart to Windows" button to the re
 ![Working](restartinto.jpeg)
 ## Features
 
-- 🚀 **One-click restart to Windows** - No more BIOS/GRUB menu navigation
+- 🚀 **One-click restart to another OS** - Skips BIOS/GRUB menu navigation
 - ⚡ **Fast and lightweight** - Minimal impact on system performance  
 - 🔧 **Easy configuration** - Simple preferences interface
 - 🔍 **Boot entry detection** - Automatically scan for OS installations
@@ -42,7 +42,7 @@ A simple GNOME Shell extension that adds a "Restart to Windows" button to the re
 
 3. **Follow the prompts**:
    - The script will set up passwordless sudo
-   - Scan for Windows boot entries
+   - Scan for preferred OS boot entries
    - Install and enable the extension
 
 4. **Restart GNOME Shell** (if needed):
@@ -132,7 +132,7 @@ The 4-digit number (e.g., `0000`) is your boot ID.
 - Ensure sudoers rule exists: `sudo cat /etc/sudoers.d/restartinto`
 - Re-run installer to fix permissions
 
-### Wrong Windows version boots
+### Wrong s version boots
 - Use the boot scanner in preferences to find correct boot ID
 - Update boot ID in preferences
 - Test with: `sudo efibootmgr -n XXXX && echo "Boot ID XXXX set"`
