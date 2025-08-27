@@ -24,7 +24,7 @@ class Extension {
                 this.addButton({
                     action: () => {
                         this.close();
-                        extension._restartToWindows(bootId, debugMode);
+                        extension._restartInto(bootId, debugMode);
                     },
                     label: buttonText,
                     key: 1
@@ -33,9 +33,9 @@ class Extension {
         };
     }
     
-    _restartToWindows(bootId, debugMode) {
+    _restartInto(bootId, debugMode) {
         if (debugMode) {
-            console.log(`Restarting to Windows with boot ID: ${bootId}`);
+            console.log(`Restarting to OS with boot ID: ${bootId}`);
         }
         
         const command = `bash -c "sudo efibootmgr -n ${bootId} && sudo reboot"`;
