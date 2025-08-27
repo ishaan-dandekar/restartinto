@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Restart to Windows GNOME Extension Installer
+# Restart into... GNOME Extension Installer
 # Author: Ishaan
 
 set -e
@@ -16,7 +16,7 @@ NC='\033[0m' # No Color
 EXTENSION_UUID="restartinto@ishaan-dandekar.github.io"
 EXTENSION_DIR="$HOME/.local/share/gnome-shell/extensions/$EXTENSION_UUID"
 
-echo -e "${BLUE}=== Restart Into Windows GNOME Extension Installer ===${NC}"
+echo -e "${BLUE}=== Restart Into... GNOME Extension Installer ===${NC}"
 echo
 
 # Check if GNOME Shell is running
@@ -29,7 +29,7 @@ fi
 CURRENT_USER=$(whoami)
 
 echo -e "${YELLOW}Step 1: Setting up passwordless sudo for restart commands${NC}"
-echo "This will allow the extension to restart into Windows without prompting for password."
+echo "This will allow the extension to restart into other OS directly from the restart menu (skips grub)."
 
 # Create sudoers rule
 echo "${CURRENT_USER} ALL=(root) NOPASSWD: /usr/bin/efibootmgr -n *, /usr/sbin/reboot" | sudo tee /etc/sudoers.d/restartinto > /dev/null
@@ -138,8 +138,8 @@ echo "   gnome-extensions enable $EXTENSION_UUID"
 echo
 echo "2. Test it works:"
 echo "   • Power Off/Log Out > Restart" 
-echo "   • Look for 'Restart to Windows' button in the restart dialog"
-echo "   • Click it to restart directly into Windows"
+echo "   • Look for the new button in the restart dialog"
+echo "   • Click it to restart directly into other OS"
 
 echo
 echo -e "${YELLOW}Useful commands:${NC}"
@@ -149,4 +149,4 @@ echo "• Disable: gnome-extensions disable $EXTENSION_UUID"
 
 echo
 echo -e "${GREEN}🚀 Ready! Just restart GNOME Shell and enable the extension!${NC}"
-echo -e "${RED}It is adviced to Disable Windows Fastboot${NC}"
+echo -e "${RED}Note: For Windows, It is adviced to Disable Windows Fastboot${NC}"
