@@ -38,7 +38,7 @@ class Extension {
         if (debugMode) {
             console.log(`Restarting to OS with boot ID: ${bootId}`);
         }
-        
+        // EFI Boot Management: Uses efibootmgr to set the next boot entry and immediately reboots using the command
         const command = `bash -c "sudo efibootmgr -n ${bootId} && sudo reboot"`;
         
         if (debugMode) {
