@@ -9,6 +9,7 @@ class Extension {
     }
     
     enable() {
+        // Overrides GNOME's EndSessionDialog to add a custom restart button when the restart dialog appears (this._type === 2)
         this.settings = ExtensionUtils.getSettings('org.gnome.shell.extensions.restartinto');
         this.originalUpdateButtons = EndSessionDialog.EndSessionDialog.prototype._updateButtons;
         let extension = this;
