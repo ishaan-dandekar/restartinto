@@ -63,14 +63,6 @@ It is highly recommended to **disable Fast Startup in Windows**. If enabled, it 
 ### Authentication
 Since this extension modifies the EFI `BootNext` variable, it requires administrative privileges. You will be prompted for your password via a standard system dialog each time you use the button. This is much more secure than modifying `sudoers` files.
 
-## Development
-
-If you'd like to package the extension for submission to the GNOME Extensions website, use the included packaging script:
-```bash
-./package-for-ego.sh
-```
-This will create two zip files in the `build/` directory—one for modern ESM (GNOME 45+) and one for legacy versions.
-
 ## License
 
 This project is licensed under the **GPL-3.0 License**.
