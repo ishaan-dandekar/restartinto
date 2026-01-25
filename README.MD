@@ -75,6 +75,8 @@ Disable **Fast Startup** in Windows. Leaving it enabled can cause hardware issue
 
 The extension modifies the EFI `BootNext` variable. You will be prompted for your password via a standard PolicyKit dialog **each time** you use the button. This is intentional and safer than persistent privilege escalation.
 
+###Passwordless Experience
+
 To avoid the password, and for a seamless experience, create a PolicyKit rule to allow passwordless execution of:
 '''
 /usr/bin/efibootmgr
