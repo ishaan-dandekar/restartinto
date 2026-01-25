@@ -18,7 +18,11 @@ A simple GNOME Shell extension that adds a **"Restart to [OS Name]"** button to 
 
 ## Installation
 
-### Automatic Installation
+### E.G.O
+
+[<img src="https://raw.githubusercontent.com/andyholmes/gnome-shell-extensions-badge/master/get-it-on-ego.svg?sanitize=true" alt="Get it on GNOME Extensions" height="100" align="middle">][EGO]
+
+### Manual Installation
 
 The easiest way to install is via the provided script:
 
