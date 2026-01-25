@@ -4,7 +4,7 @@ Restart directly into another operating system without touching BIOS or GRUB men
 
 ![GNOME Shell](https://img.shields.io/badge/GNOME-Shell-blue?logo=gnome\&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.1-green)
-![Compatibility](https://img.shields.io/badge/GNOME-3.36--47+-blue)
+![Compatibility](https://img.shields.io/badge/GNOME-40--47+-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-blue)
 
 ## What it does
