@@ -2,20 +2,22 @@
 
 Restart directly into another operating system without touching BIOS or GRUB menus.
 
+![Restart Into — restart dialog with OS selector](https://github.com/user-attachments/assets/651fe828-1be4-46ce-9ed8-1fc09fbde52f)
+
 ![GNOME Shell](https://img.shields.io/badge/GNOME-Shell-blue?logo=gnome\&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.1-green)
-![Compatibility](https://img.shields.io/badge/GNOME-40--47+-blue)
+![Compatibility](https://img.shields.io/badge/GNOME-3.36--47+-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-blue)
 
 ## What it does
 
 Adds a **“Restart to <OS>”** button to the GNOME restart dialog. Clicking it sets the next EFI boot target and immediately restarts — no firmware menus, no GRUB timeout games.
 
-Designed primarily for **dual-boot systems** (Linux + Windows), but works with any EFI boot entry.
+Designed primarily for **dual‑boot systems** (Linux + Windows), but works with any EFI boot entry.
 
 ## Features
 
-* **One-click OS switching** using EFI `BootNext`
+* **One‑click OS switching** using EFI `BootNext`
 * **Secure by design** — uses PolicyKit (`pkexec`), no `sudoers` hacks
 * **Wide GNOME support** — GNOME Shell **3.36 → 47+**
 * **Automatic boot entry detection** (EFI scanner)
@@ -60,14 +62,14 @@ gnome-extensions enable restartinto@ishaan-dandekar.github.io
    gnome-extensions prefs restartinto@ishaan-dandekar.github.io
    ```
 2. Scan for EFI boot entries
-3. Select or enter the **4-digit hexadecimal Boot ID** (e.g. `0000` for Windows)
+3. Select or enter the **4‑digit hexadecimal Boot ID** (e.g. `0000` for Windows)
 4. Customize the button label if desired
 
 ## Notes & Caveats
 
 ### Windows Fast Startup
 
-Disable **Fast Startup** in Windows. Leaving it enabled can cause hardware issues (Wi-Fi, Bluetooth, disks) when rebooting back into Linux.
+Disable **Fast Startup** in Windows. Leaving it enabled can cause hardware issues (Wi‑Fi, Bluetooth, disks) when rebooting back into Linux.
 
 ### Authentication
 
@@ -75,11 +77,11 @@ The extension modifies the EFI `BootNext` variable. You will be prompted for you
 
 ## License
 
-Licensed under the **GPL-3.0**.
+Licensed under the **GPL‑3.0**.
 
 ## Author
 
 **Ishaan Dandekar**
 GitHub: [https://github.com/ishaan-dandekar](https://github.com/ishaan-dandekar)
 
-[EGO]: https://extensions.gnome.org/extension/8506/restart-i
+[EGO]: https://extensions.gnome.org/extension/8506/restart-into/
