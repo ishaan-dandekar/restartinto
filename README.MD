@@ -75,3 +75,5 @@ This project is licensed under the **GPL-3.0 License**.
 
 **Ishaan Dandekar**
 - GitHub: [@ishaan-dandekar](https://github.com/ishaan-dandekar)
+
+[EGO]:https://extensions.gnome.org/extension/8506/restart-into/
