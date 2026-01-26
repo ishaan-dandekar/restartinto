@@ -2,7 +2,7 @@
 
 Restart directly into another operating system without touching BIOS or GRUB menus. EFI systems only.
 
-![Restart Into — restart dialog with OS selector](https://github.com/user-attachments/assets/651fe828-1be4-46ce-9ed8-1fc09fbde52f)
+![Restart Into — restart dialog with OS selector](https://github.com/user-attachments/assets/4f771d80-de9b-47be-8bc3-f9cc99c5a5a6)
 
 ![GNOME Shell](https://img.shields.io/badge/GNOME-Shell-blue?logo=gnome\&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.3-green)
